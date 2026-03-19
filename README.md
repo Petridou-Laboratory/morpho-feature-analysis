@@ -19,7 +19,7 @@ Rigidity is assessed using the **(2,3)-pebble game** algorithm for 2D constraint
 
 ## The Pebble Game Algorithm
 
-The rigidity analysis (`getClusters` in `analysis_functions_clean.py` and the standalone `pebble.py` module) is based on the **pebble game** algorithm:
+The rigidity analysis (`getClusters` in `analysis_functions.py` and the standalone `pebble.py` module) is based on the **pebble game** algorithm:
 
 > Jacobs, D. J., & Hendrickson, B. (1997). An algorithm for two-dimensional rigidity percolation: The pebble game. *Journal of Computational Physics*, **137**(2), 346–365. https://doi.org/10.1006/jcph.1997.5809
 
@@ -38,7 +38,7 @@ pip install numpy pandas scikit-image scipy networkx matplotlib tifffile tqdm
 ## Repository Contents
 
 ```
-analysis_functions_clean.py   # Main analysis pipeline
+analysis_functions.py   # Main analysis pipeline
 pebble.py                     # (2,3)-pebble game rigidity solver
 tutorial.ipynb                # Step-by-step usage tutorial
 segmentations/                # Place your segmentation images here
@@ -69,10 +69,10 @@ All label values must be positive integers; the background must be 0.
 
 ## Usage
 
-Open `tutorial.ipynb` for a complete, annotated walkthrough. The core entry point is `parameter_analysis()` in `analysis_functions_clean.py`:
+Open `tutorial.ipynb` for a complete, annotated walkthrough. The core entry point is `parameter_analysis()` in `analysis_functions.py`:
 
 ```python
-import analysis_functions_clean as af
+import analysis_functions as af
 
 results_per_cell, results_per_pocket, adj_matrix = af.parameter_analysis(
     labeled_image_path="segmentations/my_image_cp_masks.png",
